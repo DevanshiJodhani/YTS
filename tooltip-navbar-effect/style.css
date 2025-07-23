@@ -1,0 +1,70 @@
+body{
+  margin: 0;
+  height: 100vh;
+  background-color: #0d0d0d;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.navbar{
+  display: flex;
+  gap: 30px;
+  background-color: #121212;
+  padding: 12px 24px;
+  border-radius: 12px;
+}
+
+.nav-item{
+  position: relative;
+  color: #aaa;
+  font-size: 24px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-item i{
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+}
+
+.nav-item:hover i{
+  background: #8e2de2;
+  color: #fff;
+  transform: translateY(-6px);
+  box-shadow: 0 0 12px #8e2de2aa;
+}
+
+.tooltip{
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform: translateX(-50%) translateY(10px);
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: #8e2de2;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.tooltip::after{
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #8e2de2;
+}
+
+.nav-item:hover .tooltip{
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
